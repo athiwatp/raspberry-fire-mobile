@@ -1,0 +1,41 @@
+<ion-view title="RaspberryFire" id="page1">
+  <ion-nav-buttons side="right" class="has-header">
+    <button class="button button-icon icon ion-android-cloud-circle" ng-click="logs()"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+    <ul class="list">
+      <li class="item item-toggle">
+        <span class="assertive">Toggle Red LED</span>
+        <label class="toggle toggle-assertive"> 
+          <input type="checkbox" ng-model="ledData.red_led" ng-change="toggleRedLED()">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+      </li>
+      <li class="item item-toggle">
+        <span class="balanced">Toggle Green LED</span>
+        <label class="toggle toggle-balanced">
+          <input type="checkbox" ng-model="ledData.green_led" ng-change="toggleGreenLED()">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+      </li>
+    </ul>
+      <div style="height:20px;"></div>
+      <div class="padding">
+        <label class="item item-input item-borderless">
+          <input type="number" placeholder="Enter blink phases in seconds" ng-model="ledData.blink_speed">
+        </label>
+        <button class="button button-block button-assertive" ng-click="blink('red')">
+          {{blink_red_text}}
+        </button>
+        <button class="button button-block button-balanced" ng-click="blink('green')">
+          {{blink_green_text}}
+        </button>
+      </div>
+        
+    
+  </ion-content>
+</ion-view>

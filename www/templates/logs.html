@@ -1,0 +1,11 @@
+<ion-view title="Logs" id="page2">
+  <ion-content class="has-header">
+    <div class="list">
+
+      <a class="item item-icon-left" href="#" ng-repeat="a in actions | orderBy:'-date'">
+        <div ng-if="a.color == 'red'"><i class="icon ion-record assertive"></i> {{a.text}}</div>
+        <div ng-if="a.color == 'green'"><i class="icon ion-record balanced"></i> {{a.text}}</div>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>
